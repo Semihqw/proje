@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benim Sitem</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <!-- Sayfa İçeriği -->
+    <div class="header-box">
+        <!-- Google yazısı -->
+        <div class="custom-logo">
+            <span class="letter">C</span>
+            <span class="letter">l</span>
+            <span class="letter">i</span>
+            <span class="letter">m</span>
+            <span class="letter">a</span>
+            <span class="letter">t</span>
+            <span class="letter">e</span>
+            <span class="letter">S</span>
+            <span class="letter">e</span>
+            <span class="letter">m</span>
+            <span class="letter">i</span>
+            <span class="letter">h</span>
+        </div>
+
+        <!-- Arama kutusu -->
+        <div class="search-box">
+            <form action="/arama" method="GET">
+                <input type="text" id="search-input" name="query" placeholder="🔎Aramak istediğiniz şeyi yazınız">
+                <button type="submit" id="mic-btn" onclick="startDictation()">
+                    <img src="../static/img/microphone.webp" alt="Mikrofon">
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Oyun ve Bot İkonları -->
+    <div class="icon-left">
+        <img src="{{ url_for('static', filename='img/oyunikonu.png') }}" alt="Oyun İkonu">
+    </div>
+
+    <!-- Bot Resmi -->
+    <div class="bot-icon" onclick="window.location.href='yeni-sayfa.html';">
+        <img src="{{ url_for('static', filename='img/botresmi.webp') }}" alt="Bot Resmi">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-speech-api/0.2.0/web-speech-api.min.js"></script>
+    <script>
+        function startDictation() {
+            const inputField = document.getElementById("search-input");
+            if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+                const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                recognition.lang = "tr-TR";
+                recognition.start();
+                recognition.onresult = function(event) {
+                    const speechToText = event.results[0][0].transcript;
+                    inputField.value = speechToText;
+                }
+            } else {
+                alert("Tarayıcınız sesli arama desteği sunmuyor.");
+            }
+        }
+    </script>
+</body>
+</html>

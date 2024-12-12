@@ -1,0 +1,292 @@
+Sayfa arka planı ve temel düzen */
+body {
+    background-image: url('../static/img/arkaplan.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    color: rgb(117, 102, 102);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Sayfanın üst kısmındaki tüm öğelerin düzeni */
+.header-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 20%; /* Google yazısını biraz daha aşağıya alıyoruz */
+}
+
+/* Google yazısının stilini ayarlıyoruz */
+.custom-logo {
+    font-size: 6em; /* Yazıyı büyütüyoruz */
+    font-weight: 700;
+    text-transform: none; /* İlk harfi büyük yapmak için `none` kullanıyoruz */
+    margin-bottom: 40px; /* Arama kutusunu biraz daha aşağıya alıyoruz */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Her harf için mavi, kırmızı, sarı ve yeşil renkleriyle uyumlu stil */
+.custom-logo .letter:nth-child(1) {
+    color: #1E73BE; /* İlk harf için soğuk mavi */
+    text-transform: uppercase; /* Yalnızca ilk harf büyük olacak */
+}
+.custom-logo .letter:nth-child(2) {
+    color: #D74B4B; /* İkinci harf için sıcak kırmızı */
+    text-transform: lowercase; /* Diğer harfler küçük olacak */
+}
+.custom-logo .letter:nth-child(3) {
+    color: #F1C40F; /* Üçüncü harf için parlak sarı */
+    text-transform: lowercase;
+}
+.custom-logo .letter:nth-child(4) {
+    color: #27AE60; /* Dördüncü harf için doğa yeşili */
+    text-transform: lowercase;
+}
+.custom-logo .letter:nth-child(5) {
+    color: #1E73BE; /* Beşinci harf için soğuk mavi */
+    text-transform: lowercase;
+}
+.custom-logo .letter:nth-child(6) {
+    color: #E74C3C; /* Altıncı harf için kırmızı */
+    text-transform: lowercase;
+}
+.custom-logo .letter:nth-child(7) {
+    color: #F1C40F; /* Yedinci harf için sarı */
+    text-transform: lowercase;
+}
+.custom-logo .letter:nth-child(8) {
+    color: #27AE60; /* Sekizinci harf için yeşil */
+    text-transform: uppercase;
+}
+.custom-logo .letter:nth-child(9) {
+    color: #D74B4B; /* Dokuzuncu harf için kırmızı */
+    text-transform: lowercase;
+}
+.custom-logo .letter:nth-child(10) {
+    color: #F1C40F; /* Onuncu harf için sarı */
+    text-transform: lowercase;
+}
+.custom-logo .letter:nth-child(11) {
+    color: #27AE60; /* On birinci harf için yeşil */
+    text-transform: lowercase;
+}
+.custom-logo .letter:nth-child(12) {
+    color: #1E73BE; /* On ikinci harf için mavi */
+    text-transform: lowercase;
+}
+
+
+/* Arama kutusunun stilini ayarlıyoruz */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
+    justify-content: center;
+}
+
+/* Arama kutusunun boyutunu büyütüyoruz */
+.search-box input {
+    padding: 15px 20px;
+    width: 500px; /* Arama kutusunu uzatıyoruz */
+    border-radius: 25px;
+    border: 2px solid #3f3434;
+    background-color: rgba(203, 214, 172, 0.2);
+    color: rgb(83, 67, 67);
+    font-size: 1.2em;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Arama kutusunun üzerinde mikrofon simgesini yerleştiriyoruz */
+#mic-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: 15px; /* Mikrofonu kutunun sağ kısmına taşıyoruz */
+}
+
+/* Mikrofon simgesinin boyutunu ayarlıyoruz */
+#mic-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Arama kutusunun üzerine gelindiğinde renk değişiyor */
+.search-box input:hover {
+    background-color: rgba(188, 202, 138, 0.4);
+    transform: scale(1.05);
+}
+
+/* İkonlar */
+.icon-left img,
+.bot-icon img {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-left img {
+    left: 40px;
+}
+
+.bot-icon img {
+    right: 40px;
+}
+
+.icon-left img:hover,
+.bot-icon img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Genel Stil ve Temalar */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;  /* Arka Plan Beyaz */
+    color: #333333;  /* Metin Rengi */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Gradient renk geçişi */
+    text-align: center;
+    padding: 50px 0;
+    color: white;
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: bold;
+    animation: slideIn 2s ease-out;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    opacity: 0.8;
+    animation: fadeIn 3s ease-out;
+}
+
+/* Listeyi ve Öğeleri Tasarlıyoruz */
+.content {
+    padding: 30px;
+    text-align: center;
+}
+
+.animated-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-item {
+    display: block;
+    font-size: 1.4rem;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(0, 128, 128, 0.1); /* Hafif teal rengi */
+    color: #333;
+    text-decoration: none;
+    transform: scale(0.9);
+    opacity: 0;
+    animation: slideUp 2s forwards;
+}
+
+/* Liste öğesi üzerine gelindiğinde renk değişimi */
+.list-item:hover {
+    background-color: rgba(0, 128, 128, 0.3); /* Hover efekti */
+    color: white;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Animasyon Efektleri */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Liste öğeleri için gecikmeli animasyonlar */
+.list-item:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.list-item:nth-child(2) {
+    animation-delay: 0.6s;
+}
+.list-item:nth-child(3) {
+    animation-delay: 0.9s;
+}
+.list-item:nth-child(4) {
+    animation-delay: 1.2s;
+}
+.list-item:nth-child(5) {
+    animation-delay: 1.5s;
+}
+.list-item:nth-child(6) {
+    animation-delay: 1.8s;
+}
+.list-item:nth-child(7) {
+    animation-delay: 2.1s;
+}
+.list-item:nth-child(8) {
+    animation-delay: 2.4s;
+}
+
+/* Footer Tasarımı */
+footer {
+    background-color: #333333;
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
